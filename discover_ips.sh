@@ -16,10 +16,11 @@ echo $NULL_OUTPUT
 #Lets search for conneced interfaces
 for net in $NET_LIST;
 do
-	if [[ $VER -eq "yes" ]];
+	if [[ $VER == "yes" ]];
 	then
 			echo "IPs on Network $net:"
 			$FPING_COMMAND $net
 	else
 			$FPING_COMMAND $net 2>/dev/null
+	fi
 done
